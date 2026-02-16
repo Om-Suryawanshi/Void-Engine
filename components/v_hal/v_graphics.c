@@ -8,6 +8,7 @@ extern uint16_t *v_frameBuffer;
 
 void gfx_clear(uint16_t color)
 {
+  if (!v_frameBuffer) return;
   if (color == V_BLACK)
   {
     memset(v_frameBuffer, 0, V_BUFFER_SIZE * 2);
@@ -26,8 +27,6 @@ void gfx_draw_pixel(int x, int y, uint16_t color)
 {
   if (x < 0 || x >= V_DISPLAY_WIDTH || y < 0 || y >= V_DISPLAY_HEIGHT) return;
 
-  //display_set_window(x, y, 1, 1);
-  //display_push_color(color);
   v_frameBuffer[y * V_DISPLAY_WIDTH + x] = (color >> 8) | (color << 8);
 }
 
@@ -72,5 +71,7 @@ void gfx_draw_rect(int x, int y, int w, int h, uint16_t color)
 
 void gfx_fill_rect(int x, int y, int w, int h, uint16_t color)
 {
-  display_fill_rect(x, y, w, h, color);
+  for (int i = x; i < x + w; i++)
+    for (int j = y; j < y + h; j++)
+      gfx_draw_pixel(i, j, color);
 }

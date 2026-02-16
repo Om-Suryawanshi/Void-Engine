@@ -110,7 +110,7 @@ void display_init(void)
   lcd_cmd(CMD_DISPON);
 }
 
-
+/*
 void display_set_window(int x, int y, int w, int h)
 {
   uint8_t data[4];
@@ -184,6 +184,7 @@ void display_fill_rect(int x, int y, int w, int h, uint16_t color)
 
   free(buffer);
 }
+*/
 
 void display_draw(void)
 {

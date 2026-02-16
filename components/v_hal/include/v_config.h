@@ -15,7 +15,7 @@
 #define V_OFFSET_X 0
 #define V_OFFSET_Y 0
 
-#define V_SPI_SPEED_HZ    (26 * 1000 * 1000) // 26 MHz
+#define V_SPI_SPEED_HZ    (60 * 1000 * 1000) // 26 MHz
 #define V_DMA_CHUNK_LINES 20                 // How many lines to send at once
 #define V_RESET_DELAY_MS  100                // Delay for hardware reset
 #define V_BOOT_DELAY_MS   150                // Delay for screen wakeup
