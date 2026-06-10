@@ -4,7 +4,7 @@ Bare-Metal ESP32 3D Rasterizer
 
 ## Demo
 
-![Void Engine Demo](images/demo.gif)
+![Void Engine](ESP32.gif)
 
 ## Overview
 
